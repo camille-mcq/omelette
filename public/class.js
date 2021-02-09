@@ -1,13 +1,32 @@
-// créer une classe personne
-// créer un nouvel objet = une instance
 
-//créer class lieu (nom, personne [])
-// maison, épicerie
+class Personne {
+    constructor (nom, lieu, argent, mainDroite, mainGauche){
+        this.nom = nom,
+        this.lieu = lieu,
+        this.argent = argent,
+        this.mainDroite = mainDroite,
+        this.mainGauche = mainGauche,
+        this.seDeplacer = (endroit) => {
+            this.lieu = endroit
+        }
+        this.payerArticle = (article) => {},
+        this.couper = (ingrédient, outil) => {}
+    }
+}
 
-// créer outil (pas de classe needed)
-// couteau nom + action (méthode pour changer l'état)
+class Lieu {
+    constructor (nom, personne, panier){
+        this.nom = nom,
+        this.personne = personne,
+        this.panier = panier
+    }
+}
 
-// créer ingrédients (en stock dans l'épicerie) avec "nom" "état"(coupé moulu entier) et un prix
-// 6 ingrédients à stocker dans un tableau + ajouter un panier
-
-//fonction set time out ? pour faire cuire après quelques secondes.
+class Ingredient {
+    constructor (nom, etat, prix) {
+        this.nom = nom,
+        this.etat = etat,
+        this.prix = prix
+    }
+}
+export {Personne, Lieu, Ingredient};
